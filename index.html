@@ -52,7 +52,7 @@
                 </button>
 
                 <!-- Profile dropdown -->
-                <div class="relative ml-3">
+                <div id="profile" class="relative ml-3">
                   <div>
                     <button
                       type="button"
@@ -71,8 +71,8 @@
                     </button>
                   </div>
 
-                  <div
-                    class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+                  <div id="profileMenu"
+                    class="menu hidden absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
                     role="menu"
                     aria-orientation="vertical"
                     aria-labelledby="user-menu-button"
@@ -115,5 +115,20 @@
         </div>
       </main>
     </div>
+    <script>
+      document.getElementById('profile').addEventListener
+      ('click', function(){
+        const menu = document.getElementById('profileMenu')
+        console.log(menu)
+        if(menu.classList.contains("hidden")){
+          menu.classList.remove("hidden")
+          menu.classList.add('block')
+        }
+        else{
+          menu.classList.remove("block")
+          menu.classList.add('hidden')
+        }
+      })
+    </script>
   </body>
 </html>
